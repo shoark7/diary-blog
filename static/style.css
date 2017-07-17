@@ -1,0 +1,59 @@
+body {
+	width: 95%;
+	margin: 10px auto;
+}
+
+a {
+	text-decoration: none;
+}
+
+div.title {
+	display: inline-block;
+	padding: 14px 16px;
+	margin: 0 auto;
+	font-weight: bold;
+	text-align: center;
+}
+
+div.title > a {
+	color: white;
+}
+
+
+ul.menu {
+	position: fixed;
+	list-style-type: none;
+	border-radius: 5px;
+	background: #333;
+	font-weight: bold;
+	margin: 0 auto;
+	display: block;
+	width: 92%;
+	top: 0;
+}
+
+ul.menu > li {
+	float: right;
+}
+
+ul.menu > li > a:hover {
+	background-color: yellow;
+	color: black;
+}
+
+ul.menu > li > a {
+	display: block;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	color: white;
+	/*font-weight: bold;*/
+}
+
+
+.content-body {
+	background-color: #c0c0c0;
+	height: 2000px;
+	margin-top: 45px;
+	padding: 15px;
+}
