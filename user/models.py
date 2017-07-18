@@ -59,3 +59,4 @@ class BlogUser(AbstractBaseUser, PermissionsMixin):
     # def validate_unique(self, *args, **kwargs):
     #     super().super().validate_unique(*args, **kwargs)
 
+

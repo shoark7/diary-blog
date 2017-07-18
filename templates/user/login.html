@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+
+{% if error_messages %}
+<div class="error-messages">
+  <p>로그인이 실패했습니다. 다시 입력하세요.ㅓ</p>
+</div>
+{% endif %}
+
+<div id="login-container">
+  <p>Login 하세요</p>
+  <form action="{% url 'user:login' %}" method='POST'>
+    {% csrf_token %}
+    <label for="">ID</label>
+    <input type="text" name='username'>
+    <label for="">Password</label>
+    <input type="password" name='password'>
+    <input name="" class="text" value="제출" type="submit">
+  </form>
+</div>
+
+
+
+
+{% endblock %}

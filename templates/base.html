@@ -1,28 +1,33 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css ">
-  <link rel="stylesheet" href="{% static 'style.css' %}" media="all">
-  <title></title>
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css ">
+		<link rel="stylesheet" href="{% static 'style.css' %}" media="all">
+		<title></title>
+	</head>
+	<body>
 		<ul class="menu">
-			<div class="title"><a href="">박성환의 개인 일기</a></div>
-			<li><a href="">회원가입</a></li>
+			<div class="title"><a href="{% url 'blog:index' %}">박성환의 개인 일기</a></div>
+
+			{% if request.user.is_authenticated %}
+			<li><a href="{% url 'user:logout' %}">로그아웃</a></li>
+			{% else %}
+			<li><a href="{% url 'user:login' %}">로그인</a></li>
+			<li><a href="{% url 'user:sign_up' %}">회원가입</a></li>
+			{% endif %}
 			<li><a href="">글 쓰기</a></li>
 			<li><a href="">글 목록</a></li>
 		</ul>
 		<div class="content-body">
-    <div class="bg">
-			<div>
-				asd
+			<div class="bg">
+        {% block 'content' %}
+
+
+        {% endblock %}
 			</div>
-			
-    
-    </div>
 		</div>
-    
-</body>
+
+	</body>
 </html>
