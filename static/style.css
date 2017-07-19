@@ -3,6 +3,14 @@ body {
 	margin: 10px auto;
 }
 
+.text-center {
+	text-align: center;
+}
+
+.div-center {
+	margin: 0 auto;
+}
+
 a {
 	text-decoration: none;
 }
@@ -62,3 +70,54 @@ ul.menu > li > a {
 	margin: 20px;
 }
 
+
+.middle-container {
+	width: 50%;
+	margin: 100px auto;
+	border: 3px solid black;
+	border-radius: 5px;
+	text-align: center;
+}
+
+.middle-container > * {
+	margin: 20px;
+	font-size: 20px;
+}
+
+
+.middle-container > form  label {
+	display: inline-block;
+	width: 200px;
+	border: 1px solid black;
+	padding: 2px;
+}
+
+.middle-container > form  input {
+
+}
+
+.error-messages {
+	text-align: center;
+	color: red;
+	background-color: pink;
+	border-radius: 10px;
+	padding: 15px 10px;
+	margin: 10px;
+}
+
+
+#large-button {
+	width: 70%;
+	display: inline-block;
+
+}
+
+.left {
+	float: left;
+	width: 50%
+}
+
+.right {
+	float: right;
+	width: 50%
+}
