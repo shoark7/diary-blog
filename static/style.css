@@ -61,9 +61,8 @@ ul.menu > li > a {
 
 .content-body {
 	background-color: #c0c0c0;
-	height: 1000px;
 	margin-top: 45px;
-	padding: 15px;
+	padding: 5px;
 }
 
 #index {
@@ -90,8 +89,7 @@ ul.menu > li > a {
 	width: 200px;
 	border: 1px solid black;
 	padding: 2px;
-}
-
+} 
 .middle-container > form  input {
 
 }
@@ -101,7 +99,7 @@ ul.menu > li > a {
 	color: red;
 	background-color: pink;
 	border-radius: 10px;
-	padding: 15px 10px;
+	padding: 0 10px;
 	margin: 10px;
 }
 
@@ -121,3 +119,47 @@ ul.menu > li > a {
 	float: right;
 	width: 50%
 }
+
+
+.bg {
+	background-color: #e0e0e0;
+	margin: 10px 10px;
+	padding: 30px 30px;
+}
+
+.row {
+	display: flex;
+}
+
+.index-left {
+	/*display: inline-block;*/
+	/*width: 34%;*/
+	flex: 1.5;
+	margin: 10px;	
+}
+
+
+.index-right {
+	/*display: inline-block;*/
+	/*width: 60%;*/
+	flex: 2;
+	margin: 10px;
+}
+
+.post > h5 {
+	margin: 5px;
+	text-align: center;
+}
+
+.post {
+	border: 2px solid black;
+	border-radius: 5px;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+
+.text {
+
+}
+
+
