@@ -94,13 +94,14 @@ ul.menu > li > a {
 
 }
 
-.error-messages {
+.error-messages .errorlist .erro {
 	text-align: center;
 	color: red;
 	background-color: pink;
 	border-radius: 10px;
 	padding: 0 10px;
 	margin: 10px;
+	display: block;
 }
 
 
@@ -117,7 +118,8 @@ ul.menu > li > a {
 
 .right {
 	float: right;
-	width: 50%
+	width: 50%;
+	text-align: right;
 }
 
 
@@ -158,8 +160,58 @@ ul.menu > li > a {
 	margin-bottom: 10px;
 }
 
-.text {
+.button {
+	border-radius: 10px;
+	border: 2px solid #555;
+	padding: 15px;
+	display: block;
+	margin: 0 auto;
+}
+
+.right-align {
+	text-align: right;
 
 }
 
 
+.write-row {
+	width: 80%;
+	margin: 0 atuo;
+	text-align: center;
+}
+
+.left-tail {
+}
+
+.left-tail input {
+	width: 200px;
+	display: inline-block;
+}
+
+.right-tail {
+}
+
+.list {
+	width: 60%;
+	padding: 10px;
+	margin: 0 auto;
+}
+
+.list .post {
+	padding: 10px;
+}
+
+.list a {
+	color: black;
+}
+
+.list a:hover {
+	font-weight: bold;
+}
+
+.detail {
+	border: 1px solid black;
+	width: 70%;
+	text-align: center;
+	margin: 0 auto;
+}

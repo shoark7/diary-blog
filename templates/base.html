@@ -17,8 +17,8 @@
 			<li><a href="{% url 'user:login' %}">로그인</a></li>
 			<li><a href="{% url 'user:sign_up' %}">회원가입</a></li>
 			{% endif %}
-			<li><a href="">글 쓰기</a></li>
-			<li><a href="">글 목록</a></li>
+			<li><a href="{% url 'blog:write' %}">글 쓰기</a></li>
+			<li><a href="{% url 'blog:list' %}">글 목록</a></li>
 		</ul>
 		<div class="content-body">
 			<div class="bg">

@@ -1,5 +1,6 @@
 from django.contrib.auth import authenticate, \
                                 login as auth_login, logout as auth_logout
+from django.forms.utils import ErrorList
 from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, render
 from django.urls import reverse
@@ -7,6 +8,21 @@ from . import views
 from .forms import BlogUserForm
 from .models import BlogUser
 from blog.views import index
+
+from diary_blog import settings
+
+
+class DivErrorList(ErrorList):
+    def __str__(self):
+        return self.as_divs()
+
+    def as_divs(self):
+        if not self: return ''
+        return '<div class="errorlist">%s</div>' %\
+                ''.join(['<div class="error">%s</div>' % e for e in self])
+
+
+
 
 
 # 로그인, 로그아웃, 회원가입
@@ -17,10 +33,11 @@ def login(request):
         context = {'error_messages': ''}
         user = authenticate(request, username=username, password=password)
         if user is not None:
-            auth_login(request, user)
-            request.user = user
-            # return render(request, 'blog/index.html')
-            return redirect('blog:index')
+            if user.is_active:
+                auth_login(request, user)
+                print(user.is_authenticated)
+                print(request.user.is_authenticated)
+                return HttpResponseRedirect('/')
         else:
             context['error_messages'] = '다시 로그인하세요. 잘못된 입력입니다.'
             return render(request, 'user/login.html', context)
@@ -65,7 +82,7 @@ def sign_up(request):
 
     # 1. Form way
     if request.method == 'POST':
-        form = BlogUserForm(request.POST, initial={'error_messages': ''})
+        form = BlogUserForm(request.POST, error_class=DivErrorList)
         if form.is_valid():
             cleaned_data = form.cleaned_data
             username = cleaned_data.get('username')
@@ -82,7 +99,7 @@ def sign_up(request):
                                                     phonenumber=phonenumber,
                                                     sex=sex,)
             except:
-                form['error_messages'] = '문제가 있습니다'
+                form.add_error(None, "문제가 있습니다")
             else:
                 user = authenticate(username=username, password=password1)
                 auth_login(request, user)
