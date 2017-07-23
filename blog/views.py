@@ -10,9 +10,7 @@ from .models import Category, Post
 def index(request):
     latest_posts = Post.objects.all()[:5]
     context = {'latest_posts': latest_posts}
-
-    template = loader.get_template('blog/index.html')
-    return HttpResponse(template.render(context))
+    return render(request, 'blog/index.html', context)
 
 
 def write(request):
